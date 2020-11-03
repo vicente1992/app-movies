@@ -1,0 +1,30 @@
+<div id="products" class="products">
+  <div class="container mt-4" data-aos="fade-up">
+    <!-- <div class="section-title text-center">
+      <p>Productos</p>
+    </div> -->
+
+    <div class="row pt-4">
+      <div
+        class="col-lg-3 col-md-6 d-flex align-items-stretch"
+        style="height: 50%"
+        *ngFor="let item of items"
+      >
+        <div class="product" data-aos="fade-up" data-aos-delay="400">
+          <div class="product-img inner">
+            <img [src]="item.poster_path | image" class="img-fluid" alt="" />
+          </div>
+          <div class="product-info">
+            <h4>
+              {{ item.title | slice: 0:12 }}
+              {{ item.title.length > 12 ? "..." : "" }}
+            </h4>
+            <p>Calificación: {{ item.vote_average }}</p>
+            <span> Like: {{ item.popularity }} </span>
+            <span class="mb-2">Estreno: {{ item.release_date }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

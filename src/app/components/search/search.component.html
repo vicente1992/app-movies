@@ -1,0 +1,14 @@
+<div class="row m-5">
+  <div class="col">
+    <input
+      #name
+      type="text"
+      class="form-control"
+      (keyup)="searchMovie(name.value)"
+      placeholder="Ingrese el nombre de la pelicula"
+    />
+  </div>
+</div>
+
+<app-loaders *ngIf="loading"></app-loaders>
+<app-list-movie *ngIf="!loading" [items]="movies"></app-list-movie>
