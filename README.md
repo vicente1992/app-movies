@@ -9,3 +9,7 @@ Ejecute npm install para instalar la dependencias
 ## Servidor de desarrollo
 
 Ejecute `http://localhost:4200/`. Para levantar un servidro de desarrollo
+
+## link de la aplicación
+
+https://movie-app-vic.netlify.app/pupular
