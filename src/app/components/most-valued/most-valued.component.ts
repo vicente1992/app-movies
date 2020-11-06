@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
+import { MessageService } from './../../services/message.service';
 
 @Component({
   selector: 'app-most-valued',
@@ -9,7 +10,10 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MostValuedComponent implements OnInit {
   public valuedMovies: any[] = [];
   public loading: boolean = true;
-  constructor(private moviesService: MoviesService) { }
+  constructor(
+    private moviesService: MoviesService,
+    private messageService: MessageService
+  ) { }
 
   ngOnInit(): void {
     this.getPopularMovies();
@@ -19,7 +23,9 @@ export class MostValuedComponent implements OnInit {
       .subscribe((response: any) => {
         this.loading = false;
         this.valuedMovies = response.results;
-      })
+      }, (err) => {
+        this.messageService.showError(err.error.status_message);
+      });
   }
 
 }

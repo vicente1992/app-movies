@@ -32,5 +32,12 @@ export class MoviesService {
   searcMovie(query: string) {
     return this.httClient.get(this.base_url_search + `?api_key=${this.api_key}&query=${query}&language=es`)
   }
+  /**
+   * Obtener pelicula por id
+   * ${movieID}?api_key=${apiKey}&language=es-ES
+   */
+  getMovieForId(id) {
+    return this.httClient.get(this.base_url + `/${id}?api_key=${this.api_key}&language=es`)
+  }
 
 }

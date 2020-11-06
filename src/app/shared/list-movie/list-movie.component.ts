@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-movie',
@@ -7,9 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListMovieComponent implements OnInit {
   @Input() items: any[] = [];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  viewMovie(id) {
+    this.router.navigate(['movie', id]);
+  }
+
+
 
 }

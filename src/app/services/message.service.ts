@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
-
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  public loading: boolean = true;
-  constructor() { }
+
+  constructor(private toastr: ToastrService) { }
 
 
-  public showLoading() {
-    this.loading = true;
+  showSuccess(message: string) {
+    this.toastr.success('', message);
+  }
+  showError(message: string) {
+    this.toastr.error('', message);
   }
 
-  public hideLoading() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 1000)
-  }
 }

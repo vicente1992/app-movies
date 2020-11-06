@@ -1,0 +1,29 @@
+<!-- Banner -->
+<section id="banner" class="animated fast fadeIn">
+  <div class="container-fluid">
+    <h1>
+      {{ movie.title }}
+    </h1>
+    <p>{{ movie.tagline }}</p>
+
+    <p>
+      {{ movie.overview }}
+    </p>
+
+    <div>
+      <button class="btn btn-outline-secondary btn-block" routerLink="/">
+        Regresar
+      </button>
+    </div>
+  </div>
+  <span class="image object">
+    <img
+      [src]="movie.poster_path | image"
+      class="img-fluid"
+      alt=""
+      style="height: 60%"
+    />
+  </span>
+</section>
+
+<!-- Section -->

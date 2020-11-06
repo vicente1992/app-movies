@@ -5,6 +5,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 import { ImagePipe } from './pipes/image.pipe';
 import { HeaderComponent } from './shared/header/header.component';
 import { ListMovieComponent } from './shared/list-movie/list-movie.component';
@@ -14,6 +19,7 @@ import { MostValuedComponent } from './components/most-valued/most-valued.compon
 import { HttpClientModule } from '@angular/common/http';
 import { LoadersComponent } from './shared/loaders/loaders.component';
 import { SearchComponent } from './components/search/search.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +31,15 @@ import { SearchComponent } from './components/search/search.component';
     MostValuedComponent,
     ImagePipe,
     LoadersComponent,
-    SearchComponent
+    SearchComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
