@@ -9,11 +9,12 @@ import { PopularMoviesComponent } from './components/popular-movies/popular-movi
 import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'pupular' },
+  { path: '**', pathMatch: 'full', redirectTo: 'pupular' },
   { path: 'pupular', component: PopularMoviesComponent },
   { path: 'valued', component: MostValuedComponent },
   { path: 'search', component: SearchComponent },
   { path: 'movie/:id', component: MovieComponent },
-  { path: '', pathMatch: 'full', redirectTo: 'pupular' },
 ];
 
 @NgModule({
