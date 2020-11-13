@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 import { MessageService } from './../../services/message.service';
+import { Movie } from './../../models/movie.interface';
 
 @Component({
   selector: 'app-most-valued',
@@ -8,7 +9,7 @@ import { MessageService } from './../../services/message.service';
   styleUrls: ['./most-valued.component.css']
 })
 export class MostValuedComponent implements OnInit {
-  public valuedMovies: any[] = [];
+  public valuedMovies: Movie[] = [];
   public loading: boolean = true;
   constructor(
     private moviesService: MoviesService,

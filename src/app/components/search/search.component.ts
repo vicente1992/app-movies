@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
+import { Movie } from './../../models/movie.interface';
 import { MessageService } from './../../services/message.service';
 @Component({
   selector: 'app-search',
@@ -8,7 +9,7 @@ import { MessageService } from './../../services/message.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  public movies: any[] = [];
+  public movies: Movie[] = [];
   public loading;
   constructor(
     private moviesService: MoviesService,

@@ -1,3 +1,4 @@
+import { Movie } from './../../models/movie.interface';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-movie.component.css']
 })
 export class ListMovieComponent implements OnInit {
-  @Input() items: any[] = [];
+  @Input() items: Movie[] = [];
   constructor(private router: Router) { }
 
   ngOnInit(): void {
