@@ -98,8 +98,3 @@ body {
 .inner:hover img {
   transform: scale(1.5);
 }
-
-footer {
-  height: 50px;
-  background-color: #08b;
-}

@@ -1,27 +1,20 @@
-<!-- Banner -->
-<section id="banner" class="animated fast fadeIn">
-  <div class="container-fluid">
-    <h1>
-      {{ movie.original_title }}
-    </h1>
-    <p>
-      {{ movie.overview }}
-    </p>
-
-    <div>
-      <button class="btn btn-outline-secondary btn-block" routerLink="/">
+<div class="container pt-5">
+  <div class="row mt-4">
+    <div class="col-md-6 col-sm-12">
+      <div class="image">
+        <img [src]="movie.poster_path | image" alt="" />
+      </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <h1>
+        {{ movie.original_title }}
+      </h1>
+      <p>
+        {{ movie.overview }}
+      </p>
+      <button class="btn btn-outline-secondary btn-block mb-4" routerLink="/">
         Regresar
       </button>
     </div>
   </div>
-  <span class="image object">
-    <img
-      [src]="movie.poster_path | image"
-      class="img-fluid"
-      alt=""
-      style="height: 60%"
-    />
-  </span>
-</section>
-
-<!-- Section -->
+</div>
